@@ -3,7 +3,7 @@ for(var i=0;i<document.querySelectorAll(".drum").length;i++){
     var buttoninnerHTML = this.innerHTML;
     makeSound(buttoninnerHTML);
     ButtonAnimation(buttoninnerHTML);
-    
+
 
   });
 }
@@ -55,4 +55,8 @@ document.addEventListener("keypress",function(event){
 function ButtonAnimation(currentkey){
   var but = document.querySelector("."+currentkey);
   but.classList.add("pressed");
+
+  setTimeout(function(){
+    but.classList.remove("pressed");
+  },100);
 }
